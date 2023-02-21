@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style-step-3.css"/>
+        <link rel="stylesheet" href="css/style-step-2.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+        <script src="js/app.js" defer></script>
+        <title>Formulário</title>
+        <link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/x-icon">
+    </head>
+    <body>
+       
+        <main>
+
+            <!-- Quando for mobile esse vai ter position relative -->
+            <div class="formulario">
+
+                <div class="numeros">
+                    <span>1</span>
+                    <span>2</span>
+                    <span class="active">3</span>
+                    <span>4</span>
+                </div>
+
+                <!-- Quando for do tamanho Desktop ele vai ser position relative pros botões ficarem dentro dele -->
+                <div class="caixa-formulario">
+                    <div class="caixa-escolhas">
+                        <h2>Pick add-ons</h2>
+                        <p>Add-ons help enhance your gaming experience.</p>
+                        <div class="caixas-selecionar">
+                            <div class="online-service escolhido">
+                                <label class="container-label">
+                                    <input type="checkbox" input="online-service-checkbox" class="button-online-service"/>
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div class="conteudo">
+                                    <h3>Online service</h3>
+                                    <p>Access to multiplayer games</p>
+                                </div>
+                                <span class="preco">+$1/mo</span>
+                            </div>
+                            <div class="larger-storage escolhido">
+                                <label class="container-label">
+                                    <input type="checkbox" input="larger-storage-checkbox" class="button-larger-storage"/>
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div class="conteudo">
+                                    <h3>Larger storage</h3>
+                                    <p>Extra 1TB of cloud save</p>
+                                </div>
+                                <span class="preco">+$2/mo</span>
+                            </div>
+                            <div class="customizable-profile">
+                                <label class="container-label">
+                                    <input type="checkbox" input="customizable-profile" class="button-customizable-profile"/>
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div class="conteudo">
+                                    <h3>Customizable profile</h3>
+                                    <p>Custom theme on your profile</p>
+                                </div>
+                                <span class="preco">+$2/mo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Eles vão ser position absolute para ficar fora enquanto for no Celular e dentro quando for Desktop -->
+                    <a href="step-2.html" id="go-back" class="button-back">Go Back</a>
+                    <a href="step-4.html" id="next-step" class="button-next">Next Step</a>
+                </div>
+
+                <div class="barra-branca-responsivo"></div>
+
+            </div>
+
+        </main>          
+
+    </body>
+</html>

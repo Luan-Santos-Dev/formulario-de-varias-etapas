@@ -1,0 +1,98 @@
+.caixa-escolhas {
+    position: absolute;
+    top: -8px;
+    background-color: white;
+    width: 100%;
+    min-height: 60vh;
+    border-radius: 15px;
+    padding: 30px 23px 10px 23px;
+    font-family: 'Ubuntu Bold', Arial, sans-serif;
+}
+
+.online-service, .larger-storage, .customizable-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    padding: 10px 15px;
+    font-size: 0.9em;
+    border-radius: 7px;
+    border: 1px solid hsl(231, 11%, 63%);
+    margin-bottom: 14px;
+}
+
+.escolhido {
+    border: 1px solid hsl(243, 100%, 62%);
+}
+
+.container-label span.checkmark {
+    margin: -12px 0px;
+}
+
+.container-label {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    font-size: 12px;
+    color:hsl(243, 100%, 62%);
+    font-weight: 400;
+}
+
+.container-label input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 23px;
+    width: 23px;
+    background-color: white;
+    border: 1px solid hsl(243, 100%, 62%);
+    border-radius: 2px;
+}
+
+.container-label input:checked ~ .checkmark {
+    background-color: hsl(243, 100%, 62%);
+    border: none;
+}
+
+.checkmark::after {
+    display: none;
+    content: '';
+    position: absolute;
+}
+
+.container-label .checkmark::after {
+    content: '';
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 9px;
+    transform: rotate(45deg);
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+
+.container-label input:checked ~ .checkmark::after {
+    display: block;
+}
+
+.online-service .conteudo, .larger-storage .conteudo, .customizable-profile .conteudo {
+    margin: 0px 10px;
+}
+
+.online-service span.preco, .larger-storage span.preco, .customizable-profile span.preco {
+    font-size: 0.8em;
+    color: hsl(243, 100%, 62%);
+}
+
+.online-service .conteudo p, .larger-storage .conteudo p, .customizable-profile .conteudo p {
+    margin: 0px;
+    padding: 0px;
+}

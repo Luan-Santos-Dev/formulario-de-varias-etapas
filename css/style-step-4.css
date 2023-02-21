@@ -1,0 +1,56 @@
+.caixa-resultados {
+    position: absolute;
+    top: -8px;
+    background-color: white;
+    width: 100%;
+    min-height: 55vh;
+    border-radius: 15px;
+    padding: 30px 23px 10px 23px;
+    font-family: 'Ubuntu Bold', Arial, sans-serif;
+}
+
+.caixa-resultados p {
+    color: hsl(231, 11%, 63%);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 1em;
+    margin-bottom: 15px;
+    padding-right: 10px;
+}
+
+.informacoes {
+    background-color: hsl(217, 100%, 97%);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.arcade-results, .online-service-results, .larger-storage-results {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+hr {
+    margin: 15px 0px;
+}
+
+.arcade-results h3 {
+    color: hsl(213, 96%, 18%);
+}
+
+.arcade-results a, .online-service-results p, .larger-storage-results p {
+    color:hsl(231, 11%, 63%);
+    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: 0;
+}
+
+.arcade-results span, .online-service-results span, .larger-storage-results span {
+    color: hsl(213, 96%, 18%);
+    display: flex;
+    align-items: center;
+}
+
+.online-service-results {
+    margin-bottom: 10px;
+}

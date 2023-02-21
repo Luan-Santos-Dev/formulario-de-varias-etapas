@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css"/>
+        <script src="js/app.js" defer></script>
+        <title>Formulário</title>
+        <link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/x-icon">
+    </head>
+    <body>
+
+        <main>
+
+            <!-- Quando for mobile esse vai ter position relative -->
+            <div class="formulario">
+
+                <div class="numeros">
+                    <span class="active">1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                </div>
+
+                <!-- Quando for do tamanho Desktop ele vai ser position relative pro botão ficar dentro dele -->
+                <div class="caixa-formulario">
+                    <div class="caixa-form">
+                        <h2>Personal info</h2>
+                        <p>Please provide your name, email address, and phone number.</p>
+                        <form>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="input-name" placeholder="e.g. Stephen King" />
+                            <label for="email">Email Adress</label>
+                            <input type="email" id="email" class="input-email" placeholder="e.g. stephenking@lorem.com" />
+                            <label for="phone">Phone Number</label>
+                            <input type="text" id="phone" class="input-phone" placeholder="e.g. +1 234 567 890" />
+                        </form>
+                    </div>
+
+                    <!-- Ele vai ser position absolute para ficar fora enquanto for no Celular e dentro quando for Desktop -->
+                    <a href="step-2.html" id="next-step" class="button-next">Next Step</a>
+                </div>
+
+                <div class="barra-branca-responsivo"></div>
+
+            </div>
+
+        </main>
+
+    </body>
+</html>

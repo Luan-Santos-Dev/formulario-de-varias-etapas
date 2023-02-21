@@ -1,0 +1,108 @@
+.caixa-formulario .caixa-opcao {
+    position: absolute;
+    top: -8px;
+    background-color: white;
+    width: 100%;
+    min-height: 72vh;
+    border-radius: 15px;
+    padding: 30px 23px 10px 23px;
+    font-family: 'Ubuntu Bold', Arial, sans-serif;
+}
+
+.caixa-opcao h2, .caixa-escolhas h2 {
+    color: hsl(213, 96%, 18%);
+    font-size: 1.6em;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.caixa-opcao p, .caixa-escolhas p {
+    color: hsl(231, 11%, 63%);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 15px;
+    padding-right: 20px;
+}
+
+.arcade, .advanced, .pro {
+    width: 100%;
+    height: 75px;
+    padding: 15px;
+    display: flex;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    border: 1px solid hsl(231, 11%, 63%);
+}
+
+.conteudo h3 {
+    color:hsl(213, 96%, 18%);
+}
+
+.arcade {
+    border-color:hsl(213, 96%, 18%);
+}
+
+.opcoes-caixas svg {
+    margin-right: 10px;
+}
+
+.monthly-yearly {
+    margin-top: 20px;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: hsl(217, 100%, 97%);
+}
+
+.monthly {
+    color:hsl(213, 96%, 18%);
+}
+
+.container-bola {
+    display: flex;
+    /*
+        "justify-content: start" ativa Monthly
+        "justify-content: end" ativa Yearly
+    */
+    justify-content: start;
+    align-items: center;
+    width: 40px;
+    height: 21px;
+    padding: 5px;
+    margin: 0px 20px;
+    background-color:hsl(213, 96%, 18%);
+    border-radius: 20px;
+}
+
+.container-bola .bola {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.yearly {
+    color:hsl(231, 11%, 63%);
+}
+
+.button-back {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    color:hsl(231, 11%, 63%);
+    font-family: 'Ubuntu Bold', sans-serif;
+    text-decoration: none;
+    font-weight: 400;
+    width: 100px;
+    height: 45px;
+}
