@@ -54,3 +54,24 @@ hr {
 .online-service-results {
     margin-bottom: 10px;
 }
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    margin: 14px 0px;
+}
+
+.total p {
+    margin-bottom: 0;
+}
+
+.total span {
+    color:hsl(243, 100%, 62%);
+    font-size: 1.1em;
+}
+
+a.confirm {
+    background-color:hsl(243, 100%, 62%);
+}

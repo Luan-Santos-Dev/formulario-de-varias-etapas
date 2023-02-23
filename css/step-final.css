@@ -1,0 +1,17 @@
+.caixa-resultados h3 {
+    color: hsl(213, 96%, 18%);
+    font-size: 1.6em;
+    margin: 20px 0px 10px 0px;
+}
+
+.informacoes-finais {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 35px;
+}
+
+.informacoes-finais svg {
+    margin: auto;
+}

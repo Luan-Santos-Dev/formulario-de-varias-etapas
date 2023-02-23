@@ -136,3 +136,61 @@ form input {
     height: 65px;
     background-color: white;
 }
+
+.texto-numeros {
+    display: none;
+}
+
+/* 600PX PRA CIMA JÁ COMEÇA O RESPONSIVO */
+
+@media (min-width: 600px) {
+
+    main {
+        min-width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div.formulario {
+        display: flex;
+        flex-direction: row;
+        min-width: 95%;
+        padding: 10px;
+        border-radius: 10px;
+        min-height: 90vh;
+        background-color: white;
+        background-image: none;
+    }
+
+    div.numeros {
+        display: flex;
+        flex-direction: column;
+        min-width: 270px;
+        justify-content: start;
+        min-height: 568px;
+        background: url('../assets/images/bg-sidebar-desktop.svg') no-repeat center left;
+    }
+
+    div.caixa-formulario {
+        min-width: 60%;
+        min-height: 100%;
+    }
+
+    div.step {
+        display: flex;
+    }
+
+    div.texto-numeros {
+        display: block;
+    }
+
+
+
+
+    .barra-branca-responsivo {
+        display: none;
+    }
+
+}
