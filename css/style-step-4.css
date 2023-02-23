@@ -75,3 +75,12 @@ hr {
 a.confirm {
     background-color:hsl(243, 100%, 62%);
 }
+
+@media (min-width: 600px) {
+
+    
+    .informacoes, .total {
+        margin-top: 40px;
+    }
+
+}

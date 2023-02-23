@@ -145,7 +145,7 @@ form input {
 
 @media (min-width: 600px) {
 
-    main {
+    body {
         min-width: 100%;
         min-height: 100vh;
         display: flex;
@@ -153,11 +153,18 @@ form input {
         justify-content: center;
     }
 
+    main {
+        width: 100%;
+        max-width: 900px;
+        padding: 10px;
+    }
+
     div.formulario {
         display: flex;
         flex-direction: row;
         min-width: 95%;
-        padding: 10px;
+        max-width: 900px;
+        padding: 7px;
         border-radius: 10px;
         min-height: 90vh;
         background-color: white;
@@ -167,27 +174,45 @@ form input {
     div.numeros {
         display: flex;
         flex-direction: column;
-        min-width: 270px;
+        min-width: 36%;
+        border-radius: 8px;
         justify-content: start;
+        align-items: normal;
+        padding: 35px 20px;
         min-height: 568px;
         background: url('../assets/images/bg-sidebar-desktop.svg') no-repeat center left;
     }
 
     div.caixa-formulario {
-        min-width: 60%;
-        min-height: 100%;
+        position: relative;
+        min-width: 55%;
+        min-height: 568px;
+    }
+
+    div.caixa-formulario div.caixa-form {
+        position: static;
+    }
+
+    a.button-next {
+        position: absolute;
+        right: 23px;
     }
 
     div.step {
         display: flex;
+        margin: 14px 0px;
+        color: white;
     }
 
     div.texto-numeros {
         display: block;
+        font-size: 0.8em;
+        margin-left: 10px;
     }
 
-
-
+    div.texto-numeros h3 {
+        color:hsl(231, 11%, 63%);
+    }
 
     .barra-branca-responsivo {
         display: none;

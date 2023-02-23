@@ -106,3 +106,29 @@
     width: 100px;
     height: 45px;
 }
+
+@media (min-width: 600px) {
+
+    .opcoes-caixas {
+        display: flex;
+        flex-direction: row;
+    }
+
+    div.arcade, div.advanced, div.pro {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30%;
+        height: 150px;
+        margin: 5px;
+    }
+
+    .conteudo p {
+        margin-bottom: 0px;
+    }
+
+    .arcade, .advanced {
+        margin-right: 10px;
+    }
+
+}
