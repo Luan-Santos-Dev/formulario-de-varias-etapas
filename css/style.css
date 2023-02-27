@@ -108,6 +108,14 @@ form input {
     margin-bottom: 20px;
     text-indent: 15px;
     border: 1px solid hsl(231, 11%, 63%);
+    cursor: pointer;
+}
+
+/* Quando clicar no input ele muda a cor da borda */
+
+input:focus { 
+    border: 1px solid hsl(243, 100%, 62%);
+    outline: none;
 }
 
 .button-next {
@@ -126,6 +134,10 @@ form input {
     height: 45px;
     border-radius: 5px;
     background-color:hsl(213, 96%, 18%);
+}
+
+.button-next:active {
+    background-color:hsl(243, 100%, 62%);
 }
 
 .barra-branca-responsivo {
@@ -161,12 +173,12 @@ form input {
 
     div.formulario {
         display: flex;
+        min-height: auto;
         flex-direction: row;
         min-width: 95%;
         max-width: 900px;
-        padding: 7px;
+        padding: 13px;
         border-radius: 10px;
-        min-height: 90vh;
         background-color: white;
         background-image: none;
     }
@@ -191,6 +203,7 @@ form input {
 
     div.caixa-formulario div.caixa-form {
         position: static;
+        min-height: auto;
     }
 
     a.button-next {
