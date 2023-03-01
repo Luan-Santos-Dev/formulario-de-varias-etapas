@@ -39,9 +39,11 @@
     color:hsl(213, 96%, 18%);
 }
 
-.arcade {
-    border-color:hsl(213, 96%, 18%);
+
+.border-marcado {
+    border-color: hsl(213, 96%, 18%);
 }
+
 
 .opcoes-caixas svg {
     margin-right: 10px;
@@ -55,6 +57,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    cursor: pointer;
     background-color: hsl(217, 100%, 97%);
 }
 
@@ -68,7 +71,6 @@
         "justify-content: start" ativa Monthly
         "justify-content: end" ativa Yearly
     */
-    justify-content: start;
     align-items: center;
     width: 40px;
     height: 21px;
@@ -76,6 +78,17 @@
     margin: 0px 20px;
     background-color:hsl(213, 96%, 18%);
     border-radius: 20px;
+    transition: 1s all;
+}
+
+.mover-yearly {
+    margin: 0px 0px 0px 15px;
+    transition: 1s all;
+}
+
+.mover-monthly {
+    margin: 0px 15px 0px 0px;
+    transition: 1s all;
 }
 
 .container-bola .bola {
@@ -116,6 +129,7 @@
 
     div.arcade, div.advanced, div.pro {
         display: flex;
+        cursor: pointer;
         flex-direction: column;
         justify-content: space-between;
         width: 30%;
