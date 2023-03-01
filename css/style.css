@@ -90,12 +90,25 @@ body {
 }
 
 form label {
-    display: block;
+    display: flex;
+    justify-content: space-between;
     font-size: 1em;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
     color:hsl(213, 96%, 18%);
     margin-bottom: 4px;
+}
+
+.input-erro-red {
+    border: 1px solid hsl(354, 84%, 57%);
+    outline: none;
+}
+
+.erro-input {
+    display: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    color: hsl(354, 84%, 57%);
 }
 
 form input {
@@ -133,6 +146,8 @@ input:focus {
     width: 120px;
     height: 45px;
     border-radius: 5px;
+    border: none;
+    cursor: pointer;
     background-color:hsl(213, 96%, 18%);
 }
 
@@ -206,7 +221,7 @@ input:focus {
         min-height: auto;
     }
 
-    a.button-next {
+    button.button-next {
         position: absolute;
         right: 23px;
     }
