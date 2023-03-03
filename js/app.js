@@ -57,58 +57,70 @@ function inserirValoresObjetoLiteral(name, value, phone) {
 
 // step-2.html
 
-//Quando for impar é porque está desmarcado
+//Quando for false é porque está desmarcado
 
-let arcadeCont = 1;
-let advancedCont = 1;
-let proCont = 1;
+let arcadeCont = false;
+let advancedCont = false;
+let proCont = false;
 
-/*
-No final pra saber as caixas que estão marcadas e desmarcadas
-nós vamos fazer a formula pra saber se é par ou impar, se for par é porque tá marcada e colocamos true,
-se for impar é porque está desmarcada e colocamos false.
-Ai a partir dos índices do objeto e se esse índice e true ou false nós podemos pegar um valor
-pré determinado no final.
-*/
+let arrayElements = [arcadeCont, advancedCont, proCont];
 
 //Selecionando os elementos necessários
 const arcadeElement = document.querySelector('div#arcade');
 const advancedElement = document.querySelector('div#advanced');
 const proElement = document.querySelector('div#pro')
 
+let arrayDivElements = [arcadeElement, advancedElement, proElement];
+
 function CaixaMarcada(identificadorCaixa) {
 
-    //estamos trabalhando na caixa arcade
     if (identificadorCaixa == 'arcade') {
-        arcadeCont += 1;
-        if (arcadeCont % 2 == 0) {
-            //estilo de marcação na div visualmente
-            arcadeElement.classList.add('border-marcado');
-        } else {
-            //estilo de desmarcação na div visualmente
-            arcadeElement.classList.remove('border-marcado');
-        }
-    } else if (identificadorCaixa == 'advanced') {
-        //estamos trabalhando na caixa advanced
-        advancedCont += 1;
-        if (advancedCont % 2 == 0) {
-            //estilo de marcação na div visualmente
-            advancedElement.classList.add('border-marcado');
-        } else {
-            //estilo de desmarcação na div visualmente
-            advancedElement.classList.remove('border-marcado');
-        }
-    } else if (identificadorCaixa == 'pro') {
-        //estamos trabalhando na caixa pro
-        proCont += 1;
-        if (proCont % 2 == 0) {
-            //estilo de marcação na div visualmente
-            proElement.classList.add('border-marcado');
-        } else {
-            //estilo de desmarcação na div visualmente
-            proElement.classList.remove('border-marcado');
-        }
+        arcadeCont = true;
+        arcadeElement.classList.add('border-marcado');
+        arrumarDivElementsArcade();
     }
+
+    if (identificadorCaixa == 'advanced') {
+        advancedCont = true;
+        advancedElement.classList.add('border-marcado');
+        arrumarDivElementsAdvanced();
+    }
+
+    if (identificadorCaixa == 'pro') {
+        proCont = true;
+        proElement.classList.add('border-marcado');
+        arrumarDivElementsPro();
+    }
+
+}
+
+function arrumarDivElementsArcade () {
+
+    advancedCont = false;
+    proCont = false;
+
+    advancedElement.classList.remove('border-marcado');
+    proElement.classList.remove('border-marcado');
+
+}
+
+function arrumarDivElementsAdvanced () {
+
+    arcadeCont = false;
+    proCont = false;
+
+    arcadeElement.classList.remove('border-marcado');
+    proElement.classList.remove('border-marcado');
+
+}
+
+function arrumarDivElementsPro () {
+
+    arcadeCont = false;
+    advancedCont = false;
+
+    arcadeElement.classList.remove('border-marcado');
+    advancedElement.classList.remove('border-marcado');
 
 }
 
@@ -161,6 +173,7 @@ function EnviarObjetoLiteral () {
     const objetoFormularioInf = JSON.parse(localStorage.getItem('objetoValores')).formulario;
     localStorage.setItem('objetoValores', JSON.stringify(AlocandoConteudoObjetoLiteral(objetoFormularioInf)));
     
+
     window.location.href = 'step-3.html';
 }
 
@@ -168,10 +181,10 @@ function AlocandoConteudoObjetoLiteral(formulario) {
     return {
         'formulario': formulario,
         'marcadores': {
-            'arcadeCont': arcadeCont % 2 == 0 ? 'marcado' : 'desmarcado', //se for ímpar vai retornar false, se for pár vai retornar true (R$9)
-            'advancedCont': advancedCont % 2 == 0 ? 'marcado' : 'desmarcado', //se for ímpar vai retornar false, se for pár vai retornar true (R$12)
-            'proCont': proCont % 2 == 0 ? 'marcado' : 'desmarcado', //se for ímpar vai retornar false, se for pár vai retornar true (R$15)
-            'estadoBotao': estadoBotao % 2 == 0 ? 'yearly' : 'monthly' //se for ímpar vai retornar false (monthly), se for pár vai retornar true (yearly)
+            'Arcade': arcadeCont ? 'marcado' : 'desmarcado', //se for ímpar vai retornar false, se for pár vai retornar true (R$9)
+            'Advanced': advancedCont ? 'marcado' : 'desmarcado', //se for ímpar vai retornar false, se for pár vai retornar true (R$12)
+            'Pro': proCont ? 'marcado' : 'desmarcado', //se for ímpar vai retornar false, se for pár vai retornar true (R$15)
+            'estadoBotao': estadoBotao % 2 == 0 ? 'Yearly' : 'Monthly' //se for ímpar vai retornar false (monthly), se for pár vai retornar true (yearly)
         }
     }
 }
@@ -181,12 +194,267 @@ function AlocandoConteudoObjetoLiteral(formulario) {
 
 //marcar checkbox com JS: https://horadecodar.com.br/2020/09/21/marcar-um-checkbox-com-javascript-ou-jquery/
 
+// Quando for ímpar é porque está desmarcado
+let onlineServiceCont = 1;
+let largerStorageCont = 1;
+let customizableProfileCont = 1;
 
+// Selecionando os elementos necessários
+let onlineServiceElement = document.querySelector('div#service');
+let largerStorageElement = document.querySelector('div#storage');
+let customizableProfileElement = document.querySelector('div#customizable');
+
+// Selecionando os checkbox (span)
+let checkboxOnlineServiceElement = document.querySelector('input#checkbox-online-service');
+let checkboxLargerStorageElement = document.querySelector('input#checkbox-larger-storage');
+let checkboxCustomizableProfileElement = document.querySelector('input#checkbox-customizable-profile');
+
+function MarcarCheckbox(identificadorDivCheckbox) {
+
+    //estamos trabalhando na caixa online-service
+    if (identificadorDivCheckbox == 'online-service') {
+        onlineServiceCont += 1;
+        if (onlineServiceCont % 2 == 0) {
+            //adicionando estilo de marcação na div visualmente
+            onlineServiceElement.classList.add('escolhido');
+            checkboxOnlineServiceElement.classList.add('borda-marcada');
+            checkboxOnlineServiceElement.checked = true;
+        } else {
+            //removendo estilo de marcação na div visualmente
+            onlineServiceElement.classList.remove('escolhido');
+            checkboxOnlineServiceElement.classList.remove('borda-marcada');
+            checkboxOnlineServiceElement.checked = false;
+        }
+    }
+
+    //estamos trabalhando na caixa larger-storage
+    if (identificadorDivCheckbox == 'larger-storage') {
+        largerStorageCont += 1;
+        if (largerStorageCont % 2 == 0) {
+            //adicionando estilo de marcação na div visualmente
+            largerStorageElement.classList.add('escolhido');
+            checkboxLargerStorageElement.classList.add('borda-marcada');
+            checkboxLargerStorageElement.checked = true;
+        } else {
+            //removendo estilo de marcação na div visualmente
+            largerStorageElement.classList.remove('escolhido');
+            checkboxLargerStorageElement.classList.remove('borda-marcada');
+            checkboxLargerStorageElement.checked = false;
+        }
+    }
+
+    //estamos trabalhando na caixa customizable-profile
+    if (identificadorDivCheckbox == 'customizable-profile') {
+        customizableProfileCont += 1;
+        if (customizableProfileCont % 2 == 0) {
+            //adicionando estilo de marcação na div visualmente
+            customizableProfileElement.classList.add('escolhido');
+            checkboxCustomizableProfileElement.classList.add('borda-marcada');
+            checkboxCustomizableProfileElement.checked = true;
+        } else {
+            //removendo estilo de marcação na div visualmente
+            customizableProfileElement.classList.remove('escolhido');
+            checkboxCustomizableProfileElement.classList.remove('borda-marcada');
+            checkboxCustomizableProfileElement.checked = false;
+        }
+    }
+}
+
+function PegarObjetoLiteral_EnviarObjetoLiteral () {
+
+    const ObjetoLiteralFormulario = JSON.parse(localStorage.getItem('objetoValores')).formulario;
+    const ObjetoLiteralMarcadores = JSON.parse(localStorage.getItem('objetoValores')).marcadores;
+
+    localStorage.setItem('objetoValores', JSON.stringify(AlocandoConteudos(ObjetoLiteralFormulario, ObjetoLiteralMarcadores)));
+
+}
+
+function AlocandoConteudos (formulario, marcadores) {
+
+    return {
+        'formulario': formulario,
+        'marcadores': marcadores,
+        'caixa_escolhas': {
+            'onlineServiceCont': onlineServiceCont % 2 == 0 ? 'marcado' : 'desmarcado',
+            'largerStorageCont': largerStorageCont % 2 == 0 ? 'marcado' : 'desmarcado',
+            'customizableProfileCont': customizableProfileCont % 2 == 0 ? 'marcado' : 'desmarcado'
+        }
+    }
+
+}
 
 // step-4.html
 
 
 
+//Capturando os objetos literais
+const formularioObjeto = JSON.parse(localStorage.getItem('objetoValores')).formulario;
+const marcadoresObjeto = JSON.parse(localStorage.getItem('objetoValores')).marcadores;
+const caixaEscolhas = JSON.parse(localStorage.getItem('objetoValores')).caixa_escolhas;
+
+function ExibirResultados () {
+
+    // Selecionando os elementos necessários
+    let divFinal = document.querySelector('div#div-inf');
+    let informacoesDiv = document.querySelector('div.informacoes');
+
+    let DivFilha_divFinal = document.createElement('div');
+    let H3text = document.createElement('h3');
+    let ancora = document.createElement('a');
+    let span = document.createElement('span');
+
+    divFinal.appendChild(DivFilha_divFinal);
+    DivFilha_divFinal.appendChild(H3text);
+    DivFilha_divFinal.appendChild(ancora);
+    divFinal.appendChild(span);
+
+    H3text.innerText = `${percorrerFormularioObjeto()} (${exibirEstadoBotao()})`;
+    ancora.classList.add('estilo-ancora');
+    ancora.innerText = 'Change';
+    span.innerText = `${retornarValor()}`;
+
+    //<hr>
+    let hr = document.createElement('hr');
+    informacoesDiv.appendChild(hr);
+
+    //criando as div e suas informações
+
+    if (caixaEscolhas.onlineServiceCont == 'marcado') {
+        let divOnlineService = document.createElement('div');
+        let paragrafoOnlineService = document.createElement('p');
+        let spanDivOnlineService = document.createElement('span');
+
+        informacoesDiv.appendChild(divOnlineService);
+        divOnlineService.appendChild(paragrafoOnlineService);
+        divOnlineService.appendChild(spanDivOnlineService);
+
+        divOnlineService.classList.add('online-service-results');
+        paragrafoOnlineService.innerText = 'Online service';
+        spanDivOnlineService.innerText = '+$1/mo';
+    }
+
+    if (caixaEscolhas.largerStorageCont == 'marcado') {
+        let divLargerStorage = document.createElement('div');
+        let paragrafoLargerStorage = document.createElement('p');
+        let spanDivLargerStorage = document.createElement('span');
+        
+        informacoesDiv.appendChild(divLargerStorage);
+        divLargerStorage.appendChild(paragrafoLargerStorage);
+        divLargerStorage.appendChild(spanDivLargerStorage);
+
+        divLargerStorage.classList.add('larger-storage-results');
+        paragrafoLargerStorage.innerText = 'Larger storage';
+        spanDivLargerStorage.innerText = '+$2/mo';
+    }
+
+    if (caixaEscolhas.customizableProfileCont == 'marcado') {
+        let divCustomizableProfile = document.createElement('div');
+        let paragrafoCustomizableProfile = document.createElement('p');
+        let spanDivCustomizableProfile = document.createElement('span');
+
+        informacoesDiv.appendChild(divCustomizableProfile);
+        divCustomizableProfile.appendChild(paragrafoCustomizableProfile);
+        divCustomizableProfile.appendChild(spanDivCustomizableProfile);
+
+        divCustomizableProfile.classList.add('customizable-profile-results');
+        paragrafoCustomizableProfile.innerText = 'Customizable profile';
+        spanDivCustomizableProfile.innerText = '+$2/mo';
+    }
+
+    //trabalhando no TOTAL
+    let valorMarcador = recuperandoValorMarcador();
+    let valorOnlineService = recuperandoValorOnlineService();
+    let valorLargerStorage = recuperandoValorLargerStorage();
+    let valorCustomizableProfile = recuperandoValorCustomizableProfile();
+
+    let somandoTodos = valorMarcador + valorOnlineService + valorLargerStorage + valorCustomizableProfile;
+
+    let spanTotal = document.querySelector('span#total-span');
+
+    spanTotal.innerText = `+$${somandoTodos}/mo`;
+
+}
+
+ExibirResultados();
+
+function recuperandoValorMarcador () {
+
+    if (marcadoresObjeto.Advanced == 'marcado') {
+        return 12;
+    } else if (marcadoresObjeto.Arcade == 'marcado') {
+        return 9;
+    } else if (marcadoresObjeto.Pro == 'marcado') {
+        return 15;
+    } else {
+        return 0;
+    }
+
+}
+
+function recuperandoValorOnlineService () {
+
+    if (caixaEscolhas.onlineServiceCont == 'marcado') {
+        return 1;
+    } else {
+        return 0;
+    }
+
+}
+
+function recuperandoValorLargerStorage () {
+
+    if (caixaEscolhas.largerStorageCont == 'marcado') {
+        return 2;
+    } else {
+        return 0;
+    }
+
+}
+
+function recuperandoValorCustomizableProfile () {
+
+    if (caixaEscolhas.customizableProfileCont == 'marcado') {
+        return 2;
+    } else {
+        return 0;
+    }
+
+}
+
+
+function retornarValor () {
+
+    if (marcadoresObjeto.Advanced == 'marcado') {
+        return '$12/mo';
+    } else if (marcadoresObjeto.Arcade == 'marcado') {
+        return '$9/mo';
+    } else if (marcadoresObjeto.Pro) {
+        return '$15/mo';
+    } else {
+        return '$0/mo'
+    }
+
+}
+
+function percorrerFormularioObjeto () {
+
+    if (marcadoresObjeto.Advanced == 'marcado') {
+        return 'Advanced';
+    } else if (marcadoresObjeto.Arcade == 'marcado') {
+        return 'Arcade';
+    } else if (marcadoresObjeto.Pro == 'marcado') {
+        return 'Pro';
+    } else {
+        return 'Valor não escolhido';
+    }
+
+}
+
+function exibirEstadoBotao () {
+
+    return marcadoresObjeto.estadoBotao;
+
+}
 
 //step-final.html
 
