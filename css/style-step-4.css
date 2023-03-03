@@ -25,34 +25,37 @@
     padding: 10px;
 }
 
-.arcade-results, .online-service-results, .larger-storage-results {
+.results-inf, .online-service-results, .larger-storage-results, .customizable-profile-results {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.estilo-ancora:hover {
+    text-decoration: underline;
+    color:hsl(243, 100%, 62%);
+    cursor: pointer;
 }
 
 hr {
     margin: 15px 0px;
 }
 
-.arcade-results h3 {
+.results-inf h3 {
     color: hsl(213, 96%, 18%);
 }
 
-.arcade-results a, .online-service-results p, .larger-storage-results p {
+.results-inf a, .online-service-results p, .larger-storage-results p, .customizable-profile-results p {
     color:hsl(231, 11%, 63%);
     font-family: 'Ubuntu', sans-serif;
-    margin-bottom: 0;
+    margin-bottom: 0px;
 }
 
-.arcade-results span, .online-service-results span, .larger-storage-results span {
+.results-inf span, .online-service-results span, .larger-storage-results span, .customizable-profile-results span {
     color: hsl(213, 96%, 18%);
     display: flex;
     align-items: center;
-}
-
-.online-service-results {
-    margin-bottom: 10px;
 }
 
 .total {

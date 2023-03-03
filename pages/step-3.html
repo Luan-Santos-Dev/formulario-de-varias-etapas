@@ -55,9 +55,9 @@
                         <h2>Pick add-ons</h2>
                         <p>Add-ons help enhance your gaming experience.</p>
                         <div class="caixas-selecionar">
-                            <div class="online-service escolhido">
+                            <div class="online-service" id="service" onclick="MarcarCheckbox('online-service')">
                                 <label class="container-label">
-                                    <input type="checkbox" input="online-service-checkbox" class="button-online-service"/>
+                                    <input type="checkbox" input="online-service-checkbox" class="button-online-service" id="checkbox-online-service"/>
                                     <span class="checkmark"></span>
                                 </label>
                                 <div class="conteudo">
@@ -66,9 +66,9 @@
                                 </div>
                                 <span class="preco">+$1/mo</span>
                             </div>
-                            <div class="larger-storage escolhido">
+                            <div class="larger-storage" id="storage" onclick="MarcarCheckbox('larger-storage')">
                                 <label class="container-label">
-                                    <input type="checkbox" input="larger-storage-checkbox" class="button-larger-storage"/>
+                                    <input type="checkbox" input="larger-storage-checkbox" class="button-larger-storage" id="checkbox-larger-storage"/>
                                     <span class="checkmark"></span>
                                 </label>
                                 <div class="conteudo">
@@ -77,9 +77,9 @@
                                 </div>
                                 <span class="preco">+$2/mo</span>
                             </div>
-                            <div class="customizable-profile">
+                            <div class="customizable-profile" id="customizable" onclick="MarcarCheckbox('customizable-profile')">
                                 <label class="container-label">
-                                    <input type="checkbox" input="customizable-profile" class="button-customizable-profile"/>
+                                    <input type="checkbox" input="customizable-profile" class="button-customizable-profile" id="checkbox-customizable-profile"/>
                                     <span class="checkmark"></span>
                                 </label>
                                 <div class="conteudo">
@@ -93,7 +93,7 @@
 
                     <!-- Eles vão ser position absolute para ficar fora enquanto for no Celular e dentro quando for Desktop -->
                     <a href="step-2.html" id="go-back" class="button-back">Go Back</a>
-                    <a href="step-4.html" id="next-step" class="button-next">Next Step</a>
+                    <a href="step-4.html" id="next-step" class="button-next" onclick="PegarObjetoLiteral_EnviarObjetoLiteral()">Next Step</a>
                 </div>
 
                 <div class="barra-branca-responsivo"></div>

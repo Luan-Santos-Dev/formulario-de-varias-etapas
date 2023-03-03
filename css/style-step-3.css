@@ -20,6 +20,11 @@
     border-radius: 7px;
     border: 1px solid hsl(231, 11%, 63%);
     margin-bottom: 14px;
+    cursor: pointer;
+}
+
+.online-service:hover, .larger-storage:hover, .customizable-profile:hover {
+    border: 1px solid hsl(243, 100%, 62%);
 }
 
 .escolhido {
@@ -39,6 +44,10 @@
     font-weight: 400;
 }
 
+.container-label {
+    cursor: pointer;
+}
+
 .container-label input {
     position: absolute;
     opacity: 0;
@@ -53,8 +62,12 @@
     height: 23px;
     width: 23px;
     background-color: white;
-    border: 1px solid hsl(243, 100%, 62%);
+    border: 1px solid hsl(231, 11%, 63%);
     border-radius: 2px;
+}
+
+span.borda-marcada {
+    border: 1px solid hsl(243, 100%, 62%);
 }
 
 .container-label input:checked ~ .checkmark {
