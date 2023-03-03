@@ -40,7 +40,7 @@ function verificarDadosFormulario () {
         localStorage.setItem('objetoValores', JSON.stringify(formularioValoresInput));
 
 
-        window.location.href = 'step-2.html';
+        window.location.href = 'pages/step-2.html';
     }
 
 }
